@@ -21,7 +21,7 @@ app.add_middleware(
 
 pipe = pipeline("text-to-audio", model="d3vnerd/TTS_twi_test")
 
-AUDIO_DIR = "/static/audio"
+AUDIO_DIR = "static/audio"
 os.makedirs(AUDIO_DIR, exist_ok=True)
 
 BASE_URL = "http://localhost:8000"
@@ -102,3 +102,4 @@ async def generate_eng_tts(request: TTSRequest):
 
 from fastapi.staticfiles import StaticFiles
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
